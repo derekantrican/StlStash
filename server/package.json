@@ -1,0 +1,19 @@
+{
+  "name": "stlstash-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "better-sqlite3": "^11.9.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^2.0.1",
+    "uuid": "^11.1.0"
+  }
+}
