@@ -1,5 +1,8 @@
 # StlStash
 
+![](https://github.com/derekantrican/StlStash/blob/master/Demo.gif?raw=true)
+
+
 A self-hosted catalog for 3D printing files, with an in-browser 3D previewer. Built as a lightweight alternative to [Manyfold](https://manyfold.app) for people who just want a database, a previewer, and upload/download — without Rails, Redis, or Sidekiq.
 
 ## Features
