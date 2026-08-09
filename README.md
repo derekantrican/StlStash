@@ -47,6 +47,23 @@ cd ../server && npm start     # serves the API and the built client on one port
 
 Then visit `http://localhost:4000` (or set `PORT` to change it).
 
+## Docker
+
+```bash
+docker compose up -d --build
+```
+
+This builds the image and mounts a `data/` folder next to the compose file for persistence. Visit `http://localhost:4000`; your library lives in `./data` on the host.
+
+Without Compose:
+
+```bash
+docker build -t stlstash .
+docker run -d --name stlstash -p 4000:4000 -v "$(pwd)/data:/data" stlstash
+```
+
+To change the external port, adjust the left side of `-p`/`ports` (e.g. `8080:4000`) — the container always listens on 4000 internally.
+
 ## Data location
 
 Everything lives under `data/` at the repo root:
@@ -56,7 +73,7 @@ Everything lives under `data/` at the repo root:
 - `data/thumbnails/` — cached PNG thumbnails, keyed by model id
 - `data/pending/` — temporary holding area for files awaiting a duplicate/conflict decision
 
-Set `DATA_DIR` to point these somewhere else (e.g. an external drive) if you want.
+Set `DATA_DIR` to point these somewhere else (e.g. an external drive) if you want. In Docker, `DATA_DIR` is already set to `/data` inside the container — mount your own volume or bind path there, as in the examples above.
 
 ## Models and files
 

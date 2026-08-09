@@ -1,0 +1,8 @@
+services:
+  stlstash:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./data:/data
+    restart: unless-stopped
